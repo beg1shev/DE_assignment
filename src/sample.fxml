@@ -1,8 +1,37 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <CheckBox fx:id="euler" layoutX="250.0" layoutY="100.0" mnemonicParsing="false" text="Euler's method" />
+      <TextField fx:id="txtfield1" layoutX="62.0" layoutY="50.0" prefHeight="26.0" prefWidth="121.0" promptText="Enter x0" />
+      <TextField fx:id="txtfield2" layoutX="62.0" layoutY="100.0" prefHeight="26.0" prefWidth="122.0" promptText="Enter y0" />
+      <TextField fx:id="txtfield3" layoutX="62.0" layoutY="150.0" prefHeight="26.0" prefWidth="122.0" promptText="Enter X" />
+      <TextField fx:id="txtfield4" layoutX="62.0" layoutY="200.0" prefHeight="26.0" prefWidth="122.0" promptText="Enter h" />
+      <Button fx:id="btn" layoutX="230.0" layoutY="346.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="49.0" prefWidth="140.0" text="Plot a graph" textFill="#030000" />
+      <CheckBox fx:id="exact" layoutX="230.0" layoutY="265.0" mnemonicParsing="false" text="Exact solution" />
+      <CheckBox fx:id="euler_err" layoutX="435.0" layoutY="100.0" mnemonicParsing="false" text="Euler's error" />
+      <CheckBox fx:id="impr" layoutX="250.0" layoutY="150.0" mnemonicParsing="false" text="Improved Euler's method" />
+      <CheckBox fx:id="impr_err" layoutX="435.0" layoutY="150.0" mnemonicParsing="false" text="Improved Euler's error" />
+      <CheckBox fx:id="runge" layoutX="250.0" layoutY="200.0" mnemonicParsing="false" text="Runge-Kutta method" />
+      <CheckBox fx:id="runge_err" layoutX="435.0" layoutY="200.0" mnemonicParsing="false" text="Runge-Kutta's error" />
+      <CheckBox fx:id="tot_err" layoutX="415.0" layoutY="265.0" mnemonicParsing="false" text="Total errors" />
+      <TextField fx:id="init_N" layoutX="62.0" layoutY="250.0" prefHeight="26.0" prefWidth="122.0" promptText="Enter starting N" />
+      <TextField fx:id="fin_N" layoutX="62.0" layoutY="300.0" prefHeight="26.0" prefWidth="122.0" promptText="Enter finishing N" />
+      <CheckBox fx:id="all_mtd" layoutX="230.0" layoutY="55.0" mnemonicParsing="false" onAction="#handle_methods" text="All methods">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="all_err" layoutX="415.0" layoutY="55.0" mnemonicParsing="false" onAction="#handle_errors" text="All errors">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
