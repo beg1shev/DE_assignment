@@ -25,7 +25,8 @@ public class Build_Controller {
         double[] runge_error = new double[N];
         NumberAxis x = new NumberAxis();
         NumberAxis y = new NumberAxis();
-
+        x.setLabel("X");
+        y.setLabel("Y");
 
         euler_error[0] = 0;
         impr_error[0] = 0;
@@ -103,9 +104,7 @@ public class Build_Controller {
             datas3.add(to_add3);
             datas4.add(to_add4);
         }
-//        for (int i = 0; i < N; i ++) {
-//            System.out.println("i = " + i + " " + ex_sol[i] + " " + arr_y1[i] + " " + arr_y2[i] + " " + arr_y3[i]);
-//        }
+
         chart1.setData(datas);
         chart2.setData(datas2);
         chart3.setData(datas3);
@@ -115,9 +114,6 @@ public class Build_Controller {
         if (f2) coordinateSystem.getData().add(chart3);
         if (f3) coordinateSystem.getData().add(chart4);
 
-
-//        LineChart<Number, Number> errors = new LineChart<>(x, y);
-//        errors.setTitle("Errors");
 
         XYChart.Series err1 = new XYChart.Series();
         XYChart.Series err2 = new XYChart.Series();
@@ -173,8 +169,6 @@ public class Build_Controller {
 //        for (int i = 0; i < N; i++) {
 //            System.out.println("Exact solution: " + ex_sol[i] + "; Euler: " + arr_y1[i] + "; Improved: " + arr_y2[i] + "; Runge: " + arr_y3[i]);
 //        }
-//        Scene scene2 = new Scene(errors, 600, 600);
-        //        stage2.setScene(scene2);
 //        System.out.println(N);
 //        double maxx_eu = 0, maxx_imp = 0, maxx_rung = 0;
 //        for (int i = 1; i < N; i++){
@@ -199,46 +193,7 @@ public class Build_Controller {
     private double exact_sol(double x, double Const){
 //        double C;
 //        C = Math.log((y - 2 * x)/(x * x * x * (y + x))) / 3;
-
         return (-x * ((Const) * Math.pow(x, 3) + 2)/ ((Const) * Math.pow(x, 3) - 1));
-//        return (- x*(x*x*x -4)/(x*x*x + 2));
-//        return 5/2 * Math.pow(Math.E,2*x-2) * x + x/2;
-    }
 
-//    public void Euler_method(int N, double arr_x[], double arr_y1[], double h){
-//        for (int i = 1; i < N; i ++) {
-//            arr_x[i] = arr_x[i - 1] + h;
-//        }
-//        for (int i = 1; i < N; i ++){
-//            arr_y1[i] = arr_y1[i - 1] + h*func(arr_x[i - 1], arr_y1[i - 1]);
-//        }
-//    }
-//    public void Improved_euler(double arr_x[], double arr_y2[], int N, double h){
-////        for (int i = 1; i < N; i++){
-////            arr_x[i] = arr_x[i - 1] + h;
-////        }
-//        for (int i = 1; i < N; i++){
-//            arr_x[i] = arr_x[i - 1] + h;
-//            arr_y2[i] = arr_y2[i - 1] +  h * func(arr_x[i - 1] + h/2, arr_y2[i - 1] + (h/2)*func(arr_x[i - 1], arr_y2[i - 1]));
-////            System.out.println("Runge:\n" + arr_x[i] + " " + arr_y[i] + "\n");
-//        }
-//    }
-//    public void Runge_Kuffa(double arr_x[], double arr_y3[], int N, double h){
-//        double k1, k2, k3, k4;
-////        for (int i = 1; i < N; i++){
-////            arr_x[i] = arr_x[i - 1] + h;
-////        }
-////        System.out.println(" N = " + N + " Runge: ");
-//        for (int i = 1; i < N; i++){
-//            arr_x[i] = arr_x[i - 1] + h;
-//            k1 = func(arr_x[i - 1], arr_y3[i - 1]);
-//            k2 = func(arr_x[i - 1] + h/2, arr_y3[i - 1] + (h*k1)/2);
-//            k3 = func(arr_x[i - 1] + h/2,arr_y3[i - 1] + (h*k2)/2);
-//            k4 = func(arr_x[i - 1] + h, arr_y3[i - 1] + h*k3);
-//            arr_y3[i] = arr_y3[i - 1] + h* (k1/6 + k2/3 + k3/3 + k4/6);
-//
-////            System.out.println("i = " + i + " " + arr_x[i] + " " + arr_y[i] + "\n");
-//        }
-//
-//    } us
+    }
 }
